@@ -13,24 +13,25 @@ module.exports = {
   target: 'node',
 
   // Prevents warnings from TypeScript compiler
- externals: [
+  externals: [
     nodeExternals({
       whitelist: ['webpack/hot/poll?100'],
     }),
   ],
 
   module: {
-    rules: [
-      {
-        test: /.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
+    rules: [{
+      test: /.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/,
+    }, ],
   },
   mode: 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      Config: path.resolve(__dirname, 'src/config/'),
+    },
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

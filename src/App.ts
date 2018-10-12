@@ -1,3 +1,5 @@
+import log from 'Config/log'
+
 class App {
   public message
 
@@ -6,7 +8,7 @@ class App {
   }
 
   public sayHello(): void {
-    console.log(this.message)
+    log.info(this.message)
     return this.message
   }
 }
