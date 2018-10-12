@@ -1,0 +1,10 @@
+
+{
+    "verbose": false,
+    "ignore": [
+        "*src/**"
+    ],
+    "watch": [
+        "dist/server.js"
+      ]
+}

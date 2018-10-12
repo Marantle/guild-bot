@@ -4,5 +4,34 @@
   "main": "src/index.ts",
   "repository": "https://github.com/Marantle/guild-bot.git",
   "author": "Marantle <leri6@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "webpack --config webpack.config.js",
+    "start:dev": "node dist/server",
+    "nodemon": "nodemon --exec node ./dist/server.js",
+    "lint": "tslint --project tsconfig.json",
+    "test": "mocha --require ts-node/register test/**/*.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.7",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.3",
+    "ts-loader": "^5.2.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3",
+    "typescript-eslint-parser": "^20.0.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "global": "^4.3.2"
+  }
 }
