@@ -6,6 +6,5 @@ describe('App sayHello', () => {
   it('should say "hello"', () => {
     const text = App.sayHello()
     expect(text).to.equal('hello')
-    log.info('aaasssess')
   })
 })

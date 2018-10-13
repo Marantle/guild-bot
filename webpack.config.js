@@ -21,10 +21,17 @@ module.exports = {
 
   module: {
     rules: [{
-      test: /.tsx?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/,
-    }, ],
+        test: /.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /test\.js$/,
+        use: 'mocha-loader',
+        exclude: /node_modules/,
+        include: [ path.resolve(__dirname, 'test') ]
+      }
+    ],
   },
   mode: 'development',
   resolve: {

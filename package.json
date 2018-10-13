@@ -10,7 +10,9 @@
     "start:dev": "node dist/server",
     "nodemon": "nodemon --exec node ./dist/server.js",
     "lint": "tslint --project tsconfig.json",
-    "test": "cross-env NODE_PATH=./src mocha --require ts-node/register test/**/*.ts"
+    "mocha": "mocha-webpack --webpack-config webpack.config.js --require ts-node/register \"test/**/*.ts\"",
+    "mocha:watch": "mocha-webpack --webpack-config webpack.config.js --require ts-node/register \"test/**/*.ts\" --watch",
+    "test": "yarn lint &&  yarn mocha"
   },
   "devDependencies": {
     "@types/chai": "^4.1.6",
@@ -20,6 +22,7 @@
     "cross-env": "^5.2.0",
     "husky": "^1.1.2",
     "mocha": "^5.2.0",
+    "mocha-webpack": "2.0.0-beta.0",
     "nodemon": "^1.18.4",
     "prettier": "^1.14.3",
     "ts-loader": "^5.2.1",

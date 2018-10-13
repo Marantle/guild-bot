@@ -8,7 +8,6 @@ class App {
   }
 
   public sayHello(): string {
-    log.info(this.message)
     return this.message
   }
 }
