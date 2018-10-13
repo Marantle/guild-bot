@@ -11,4 +11,4 @@ if (module.hot) {
   module.hot.dispose(() => log.info('hot dispose'))
 }
 
-App.sayHello()
+log.info(App.sayHello())

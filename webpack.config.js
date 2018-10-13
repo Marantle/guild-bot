@@ -4,10 +4,10 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   // entry is where, say, your app starts - it can be called main.ts, index.ts, app.ts, whatever
-  entry: ['webpack/hot/poll?100', './src/index.ts'],
+  entry: ['./src/index.ts'],
 
   // This forces webpack not to compile TypeScript for one time, but to stay running, watch for file changes in project directory and re-compile if needed
-  watch: true,
+
 
   // Is needed to have in compiled output imports Node.JS can understand. Quick search gives you more info
   target: 'node',
@@ -24,16 +24,9 @@ module.exports = {
         test: /.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },
-      {
-        test: /test\.js$/,
-        use: 'mocha-loader',
-        exclude: /node_modules/,
-        include: [ path.resolve(__dirname, 'test') ]
       }
     ],
   },
-  mode: 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
