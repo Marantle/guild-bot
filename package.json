@@ -10,7 +10,7 @@
     "start:dev": "node dist/server",
     "nodemon": "nodemon --exec node ./dist/server.js",
     "lint": "tslint --project tsconfig.json",
-    "test": "tslint --project tsconfig.json && cross-env NODE_PATH=./src mocha --require ts-node/register test/**/*.ts"
+    "test": "cross-env NODE_PATH=./src mocha --require ts-node/register test/**/*.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.1.6",
