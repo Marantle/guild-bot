@@ -44,7 +44,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r ~/guild-bot/dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
+            scp ~/guild-bot/dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
 
 workflows:
   version: 2
