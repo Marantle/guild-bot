@@ -11,8 +11,8 @@
     "watch": "webpack --watch --mode=development",
     "nodemon": "nodemon --exec node ./dist/server.js",
     "lint": "tslint --project tsconfig.json",
-    "mocha": "mocha-webpack --webpack-config webpack.config.js --require ts-node/register \"test/**/*.ts\"",
-    "mocha:watch": "mocha-webpack --webpack-config webpack.config.js --require ts-node/register \"test/**/*.ts\" --watch",
+    "mocha": "mocha-webpack --webpack-config webpack.config.js --mode=production --require ts-node/register \"test/**/*.ts\"",
+    "mocha:watch": "mocha-webpack --webpack-config webpack.config.js --mode=development --require ts-node/register \"test/**/*.ts\" --watch",
     "test": "yarn lint &&  yarn mocha"
   },
   "devDependencies": {
