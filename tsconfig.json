@@ -6,7 +6,8 @@
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "Config/*": ["src/config/*"]
+      "Utility/*": ["src/utility/*"],
+      "Config/*": ["config/*"]
     }
   },
   "files": [

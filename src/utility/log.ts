@@ -1,5 +1,7 @@
 import appRootPath from 'app-root-path'
 import * as winston from 'winston'
+const { format, createLogger, transports } = winston
+const { combine, timestamp, json, prettyPrint } = format
 
 const options = {
   console: {
@@ -18,22 +20,27 @@ const options = {
     maxsize: 5242880, // 5MB
   },
 }
-const logger = winston.createLogger({
+const myFormat = combine(
+  timestamp(),
+  json(),
+)
+
+const log = createLogger({
   exitOnError: false, // do not exit on handled exceptions
-  format: winston.format.json(),
+  format: myFormat,
   level: 'info',
   transports: [
-    new winston.transports.File(options.file),
-    new winston.transports.Console(options.console),
+    new transports.File(options.file),
+    new transports.Console(options.console),
   ],
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(
-    new winston.transports.Console({
-      format: winston.format.simple(),
-    }),
-  )
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   log.add(
+//     new transports.Console({
+//       format: winston.format.simple(),
+//     }),
+//   )
+// }
 
-export default logger
+export default log

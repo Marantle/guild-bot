@@ -1,16 +1,16 @@
-import log from 'Config/log'
+import log from 'Utility/log'
 
 class App {
-  public message
+  public message: string
 
-  constructor() {
-    this.message = 'hello'
+  constructor(message: string) {
+    this.message = message
   }
 
-  public sayHello(): void {
+  public sayHello(): string {
     log.info(this.message)
     return this.message
   }
 }
 
-export default new App()
+export default new App('hello')
