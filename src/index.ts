@@ -1,4 +1,4 @@
-import log from 'Config/log'
+import log from 'Utility/log'
 import App from './App'
 
 declare const module: any
