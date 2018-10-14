@@ -40,7 +40,7 @@ jobs:
   deploy:
     machine:
       enabled: true
-    working_directory: ~/guild-bot/dist
+    working_directory: ~/repo/dist
     steps:
       - run:
           name: Deploy Over SSH
