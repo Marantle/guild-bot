@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
 
-      <<: *yarn-install
+      - <<: *yarn-install
 
       - run: yarn test
 
