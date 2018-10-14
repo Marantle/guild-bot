@@ -38,11 +38,6 @@ jobs:
       - run: yarn test
       - run: yarn build
 
-      - run:
-        - store_artifacts:
-          path: ~/repo/dist/server.js
-          destination: server-file
-
   deploy:
     machine:
       enabled: true
