@@ -1,4 +1,3 @@
-import * as appRootPath from 'app-root-path'
 import * as winston from 'winston'
 const { format, createLogger, transports } = winston
 const { combine, timestamp, json } = format
@@ -12,7 +11,7 @@ const options = {
   },
   file: {
     colorize: false,
-    filename: `${appRootPath}/logs/app.log`,
+    filename: './logs/app.log',
     handleExceptions: true,
     json: true,
     level: 'info',

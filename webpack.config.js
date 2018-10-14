@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   node: {
@@ -33,9 +32,6 @@ module.exports = {
       Config: path.resolve(__dirname, 'config/'),
     },
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'server.js',
