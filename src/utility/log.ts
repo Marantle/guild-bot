@@ -1,6 +1,7 @@
 import * as winston from 'winston'
 const { format, createLogger, transports } = winston
 const { combine, timestamp, json } = format
+declare var __dirname
 
 const options = {
   console: {
@@ -11,7 +12,7 @@ const options = {
   },
   file: {
     colorize: false,
-    filename: './logs/app.log',
+    filename: `${__dirname}/logs/app.log`,
     handleExceptions: true,
     json: true,
     level: 'info',
