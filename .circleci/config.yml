@@ -41,6 +41,9 @@ jobs:
           command: |
             pwd
             ls -lat ./dist
+      - store_artifacts:
+          path: ~/repo/dist/server.js
+          destination: artifact-file
 
   deploy:
     working_directory: ~/repo
