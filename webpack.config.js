@@ -3,6 +3,9 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  node: {
+    fs: "empty"
+  },
   // entry is where, say, your app starts - it can be called main.ts, index.ts, app.ts, whatever
   entry: ['./src/index.ts'],
 
@@ -24,6 +27,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    mainFields: ["main", "module"],
     alias: {
       Utility: path.resolve(__dirname, 'src/utility/'),
       Config: path.resolve(__dirname, 'config/'),
