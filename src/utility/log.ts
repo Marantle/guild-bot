@@ -12,7 +12,7 @@ const options = {
   },
   file: {
     colorize: false,
-    filename: `${__dirname}/logs/app.log`,
+    filename: './logs/app.log',
     handleExceptions: true,
     json: true,
     level: 'info',
@@ -20,10 +20,7 @@ const options = {
     maxsize: 5242880, // 5MB
   },
 }
-const myFormat = combine(
-  timestamp(),
-  json(),
-)
+const myFormat = combine(timestamp(), json())
 
 const log = createLogger({
   exitOnError: false, // do not exit on handled exceptions
@@ -42,5 +39,5 @@ const log = createLogger({
 //     }),
 //   )
 // }
-log.info(`logs written to ${__dirname}/logs/app.log`)
+log.info(`logs written to ${options.file}`)
 export default log
