@@ -13,17 +13,7 @@ module.exports = {
   target: 'node',
 
   // Prevents warnings from TypeScript compiler
-  externals: [
-    nodeExternals({
-      whitelist: [
-        'webpack/hot/poll?100',
-        /^discord.js/,
-        /^winston/,
-        /^app-root-path/,
-        /^firebase-admin/
-      ],
-    }),
-  ],
+
 
   module: {
     rules: [{
