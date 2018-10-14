@@ -6,20 +6,6 @@ defaults: &defaults
   working_directory: ~/guild-bot
   docker:
     - image: circleci/node:10.12.0
-yarn-install: &yarn-install
-  - restore_cache:
-      keys:
-      - v1-dependencies-{{ checksum "package.json" }}
-      - v1-dependencies-
-
-  - run: yarn install
-
-  - save_cache:
-      paths:
-        - node_modules
-      key: v1-dependencies-{{ checksum "package.json" }}
-
-  - run: yarn test
 
 version: 2
 jobs:
@@ -28,7 +14,17 @@ jobs:
     steps:
       - checkout
 
-      - <<: *yarn-install
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn test
 
@@ -37,7 +33,17 @@ jobs:
     steps:
       - checkout
 
-      <<: *yarn-install
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn test
 
@@ -46,7 +52,17 @@ jobs:
     steps:
       - checkout
 
-      <<: *yarn-install
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: yarn build
 
