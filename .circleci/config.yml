@@ -37,6 +37,13 @@ jobs:
       # run tests!
       - run: yarn test
       - run: yarn build
+
+      - run:
+          name: Creating  Artifacts
+            - store_artifacts:
+              path: ~/repo/dist/server.js
+              destination: server-file
+
   deploy:
     machine:
       enabled: true
