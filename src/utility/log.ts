@@ -42,5 +42,5 @@ const log = createLogger({
 //     }),
 //   )
 // }
-
+log.info(`logs written to ${__dirname}/logs/app.log`)
 export default log
