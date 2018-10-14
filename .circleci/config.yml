@@ -37,6 +37,10 @@ jobs:
       # run tests!
       - run: yarn test
       - run: yarn build
+      - run:
+          command: |
+            pwd
+            ls -lat
 
   deploy:
     machine:
@@ -45,6 +49,8 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
+            pwd
+            ls -lat
             scp ~/repo/dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
 
 workflows:
