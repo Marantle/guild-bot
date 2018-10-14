@@ -39,20 +39,18 @@ jobs:
       - run: yarn build
 
       - run:
-          name: Creating  Artifacts
-            - store_artifacts:
-              path: ~/repo/dist/server.js
-              destination: server-file
+        - store_artifacts:
+          path: ~/repo/dist/server.js
+          destination: server-file
 
   deploy:
     machine:
       enabled: true
-    working_directory: ~/repo/dist
     steps:
       - run:
           name: Deploy Over SSH
           command: |
-            scp ./server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
+            scp ~/repo/dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
 
 workflows:
   version: 2
