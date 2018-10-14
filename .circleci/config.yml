@@ -43,10 +43,9 @@ jobs:
             ls -lat ./dist
       - store_artifacts:
           path: ~/repo/dist/server.js
-          destination: artifact-file
+          destination: build
 
   deploy:
-    working_directory: ~/repo
     machine:
       enabled: true
     steps:
