@@ -1,7 +1,7 @@
 import * as winston from 'winston'
 const { format, createLogger, transports } = winston
 const { combine, timestamp, json } = format
-declare var __dirname
+declare var __dirname: any
 
 const options = {
   console: {

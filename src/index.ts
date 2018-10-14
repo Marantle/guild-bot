@@ -1,7 +1,7 @@
 import { Client } from 'discord.js'
 import * as firebase from 'firebase-admin'
+import log from 'Utility/log'
 import App from './App'
-import log from './utility/log'
 
 declare const module: any
 
