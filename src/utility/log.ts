@@ -1,7 +1,7 @@
-import appRootPath from 'app-root-path'
+import * as appRootPath from 'app-root-path'
 import * as winston from 'winston'
 const { format, createLogger, transports } = winston
-const { combine, timestamp, json, prettyPrint } = format
+const { combine, timestamp, json } = format
 
 const options = {
   console: {

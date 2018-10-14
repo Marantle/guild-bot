@@ -4,11 +4,7 @@
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
-    "baseUrl": "./",
-    "paths": {
-      "Utility/*": ["src/utility/*"],
-      "Config/*": ["config/*"]
-    }
+    "baseUrl": "./"
   },
   "files": [
     "./node_modules/@types/mocha/index.d.ts",

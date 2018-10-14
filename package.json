@@ -16,6 +16,7 @@
     "lintest": "yarn lint &&  yarn test"
   },
   "devDependencies": {
+    "@types/app-root-path": "^1.2.4",
     "@types/chai": "^4.1.6",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.11.7",

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
-import log from 'Utility/log'
 import App from '../src/App'
+import log from '../src/utility/log'
 
 describe('App sayHello', () => {
   it('should say "hello"', () => {

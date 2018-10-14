@@ -15,20 +15,23 @@ module.exports = {
   // Prevents warnings from TypeScript compiler
   externals: [
     nodeExternals({
-      whitelist: ['webpack/hot/poll?100'],
+      whitelist: [
+        'webpack/hot/poll?100',
+        'node_modules/discord.js',
+        'node_modules/winston',
+        'node_modules/firebase-admin'
+      ],
     }),
   ],
 
   module: {
     rules: [{
-        test: /.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      }
-    ],
+      test: /.tsx?$/,
+      use: 'ts-loader'
+    }],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.json'],
     alias: {
       Utility: path.resolve(__dirname, 'src/utility/'),
       Config: path.resolve(__dirname, 'config/'),

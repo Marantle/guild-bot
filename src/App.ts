@@ -1,4 +1,4 @@
-import log from 'Utility/log'
+import log from './utility/log'
 
 class App {
   public message: string
