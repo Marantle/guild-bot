@@ -85,9 +85,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            pwd
-            ls -lat
-            scp dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
+            scp -o LogLevel=ERROR dist/server.js $SSH_USER@$SSH_HOST:/var/node/guild-bot
 
 workflows:
   version: 2
