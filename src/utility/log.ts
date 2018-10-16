@@ -1,7 +1,13 @@
-import * as winston from 'winston'
-const { format, createLogger, transports } = winston
+import { format, createLogger, transports } from 'winston'
 const { combine, timestamp, json } = format
-declare var __dirname: any
+import fs from 'fs'
+import path from 'path'
+
+var logDir = 'log'; // directory path you want to set
+if ( !fs.existsSync( logDir ) ) {
+    // Create the directory if it does not exist
+    fs.mkdirSync( logDir );
+}
 
 const options = {
   console: {
@@ -12,7 +18,7 @@ const options = {
   },
   file: {
     colorize: false,
-    filename: './logs/app.log',
+    filename: path.join(logDir, '/app.log'),
     handleExceptions: true,
     json: true,
     level: 'info',
@@ -39,5 +45,5 @@ const log = createLogger({
 //     }),
 //   )
 // }
-log.info(`logs written to ${options.file}`)
+log.info(`logs written to ${options.file.filename}`)
 export default log
