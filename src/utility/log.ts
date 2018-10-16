@@ -1,12 +1,12 @@
-import { format, createLogger, transports } from 'winston'
+import { createLogger, format, transports } from 'winston'
 const { combine, timestamp, json } = format
 import fs from 'fs'
 import path from 'path'
 
-var logDir = 'log'; // directory path you want to set
-if ( !fs.existsSync( logDir ) ) {
-    // Create the directory if it does not exist
-    fs.mkdirSync( logDir );
+const logDir = 'log' // directory path you want to set
+if (!fs.existsSync(logDir) {
+  // Create the directory if it does not exist
+  fs.mkdirSync(logDir
 }
 
 const options = {
@@ -18,7 +18,7 @@ const options = {
   },
   file: {
     colorize: false,
-    filename: path.join(logDir, '/app.log'),
+    filename: path.join(logDir, '/guildbot.log'),
     handleExceptions: true,
     json: true,
     level: 'info',
